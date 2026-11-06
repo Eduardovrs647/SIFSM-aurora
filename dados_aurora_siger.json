@@ -1,0 +1,157 @@
+{
+  "projeto": "Sistema Integrado de Futuro Sustentável em Marte (SIFSM)",
+  "colonia": "Aurora Siger",
+  "unidade_energia": "kWh por ciclo (valores simulados)",
+  "modulos": [
+    {
+      "codigo": "SUP-01",
+      "nome": "Suporte à vida",
+      "ativo": 1,
+      "critico": 1,
+      "descricao": "Controle de condições essenciais à sobrevivência."
+    },
+    {
+      "codigo": "ENE-01",
+      "nome": "Energia",
+      "ativo": 1,
+      "critico": 1,
+      "descricao": "Geração, armazenamento e distribuição de energia."
+    },
+    {
+      "codigo": "COM-01",
+      "nome": "Comunicação",
+      "ativo": 0,
+      "critico": 1,
+      "descricao": "Comunicação com equipes e sistemas externos."
+    },
+    {
+      "codigo": "HAB-01",
+      "nome": "Habitat",
+      "ativo": 1,
+      "critico": 1,
+      "descricao": "Infraestrutura habitacional da colônia."
+    },
+    {
+      "codigo": "LAB-01",
+      "nome": "Laboratório",
+      "ativo": 0,
+      "critico": 0,
+      "descricao": "Pesquisa e experimentos científicos."
+    },
+    {
+      "codigo": "ARM-01",
+      "nome": "Armazenamento",
+      "ativo": 1,
+      "critico": 1,
+      "descricao": "Armazenamento de insumos e recursos."
+    }
+  ],
+  "sensores": [
+    {
+      "codigo": "SEN-TEMP-01",
+      "modulo_codigo": "HAB-01",
+      "tipo": "temperatura_interna",
+      "unidade": "°C"
+    },
+    {
+      "codigo": "SEN-TEMP-02",
+      "modulo_codigo": "HAB-01",
+      "tipo": "temperatura_externa",
+      "unidade": "°C"
+    },
+    {
+      "codigo": "SEN-INT-01",
+      "modulo_codigo": "HAB-01",
+      "tipo": "integridade_estrutural",
+      "unidade": "0 ou 1"
+    },
+    {
+      "codigo": "SEN-PRES-01",
+      "modulo_codigo": "SUP-01",
+      "tipo": "pressao_tanque",
+      "unidade": "kPa"
+    },
+    {
+      "codigo": "SEN-CONS-01",
+      "modulo_codigo": "ENE-01",
+      "tipo": "consumo_energetico",
+      "unidade": "kWh"
+    },
+    {
+      "codigo": "SEN-BAT-01",
+      "modulo_codigo": "ENE-01",
+      "tipo": "carga_bateria",
+      "unidade": "%"
+    }
+  ],
+  "telemetria_inicial": [
+    {
+      "sensor_codigo": "SEN-TEMP-01",
+      "ciclo": 6,
+      "valor": 21.5,
+      "status": "NORMAL"
+    },
+    {
+      "sensor_codigo": "SEN-TEMP-02",
+      "ciclo": 6,
+      "valor": -58.0,
+      "status": "NORMAL"
+    },
+    {
+      "sensor_codigo": "SEN-INT-01",
+      "ciclo": 6,
+      "valor": 1,
+      "status": "NORMAL"
+    },
+    {
+      "sensor_codigo": "SEN-PRES-01",
+      "ciclo": 6,
+      "valor": 92.0,
+      "status": "NORMAL"
+    },
+    {
+      "sensor_codigo": "SEN-CONS-01",
+      "ciclo": 6,
+      "valor": 78.0,
+      "status": "ATENCAO"
+    },
+    {
+      "sensor_codigo": "SEN-BAT-01",
+      "ciclo": 6,
+      "valor": 32.0,
+      "status": "ATENCAO"
+    }
+  ],
+  "energia": {
+    "geracao_solar": [
+      40,
+      38,
+      35,
+      30,
+      28,
+      22
+    ],
+    "consumo": [
+      45,
+      50,
+      58,
+      65,
+      70,
+      78
+    ],
+    "bateria": [
+      90,
+      82,
+      74,
+      60,
+      48,
+      32
+    ]
+  },
+  "parametros_regra": {
+    "limiar_consumo_kwh": 60,
+    "pressao_minima_kpa": 80,
+    "integridade_estrutural_ok": 1,
+    "regra": "(consumo_alto E modulo_critico) OU (integridade_falha) OU (pressao_baixa)"
+  }
+}
