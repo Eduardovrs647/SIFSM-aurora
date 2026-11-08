@@ -41,13 +41,12 @@ O projeto está organizado da seguinte maneira:
 
 text
 SIFSM/
-│
-├── codigo_fonte.py
-├── script_banco.sql
-├── dados_aurora_siger.json
-├── simulacao_computacional.py
-├── circuito_logico.pdf
-└── README.md
+- codigo_fonte.py
+- script_banco.sql
+- dados_aurora_siger.json
+- simulacao_computacional.py
+- circuito_logico.pdf
+- README.md
 
 
 ### Descrição dos arquivos
